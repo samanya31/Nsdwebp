@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-soft font-sans text-gov-navy antialiased;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .input-elegant {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gov-indigo focus:ring-4 focus:ring-gov-light-blue outline-none transition-all duration-300 placeholder-gray-400 bg-white shadow-soft hover:shadow-medium;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold shadow-medium hover:shadow-elegant transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gov-indigo hover:text-gov-indigo hover:bg-gov-light-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card-elegant {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-medium transition-all duration-300;
+  }
+
+  .progress-step {
+    @apply h-2 rounded-full bg-gradient-primary transition-all duration-500 ease-out;
+  }
+
+  .label-floating {
+    @apply absolute left-4 top-3.5 text-gray-500 transition-all duration-200 pointer-events-none;
+  }
+
+  .input-with-floating:focus~.label-floating,
+  .input-with-floating:not(:placeholder-shown)~.label-floating {
+    @apply -top-2.5 left-3 text-xs bg-white px-1 text-gov-indigo font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
